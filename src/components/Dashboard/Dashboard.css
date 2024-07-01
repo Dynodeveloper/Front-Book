@@ -1,0 +1,133 @@
+.Dashboard {
+    display: flex; /* Use flexbox for layout */
+    min-height: 100vh; /* Set minimum height for full viewport */
+  }
+  
+  /* Superior Navigation Bar Styles */
+  .superior-nav {
+
+    display: flex;
+    padding: 1rem;
+    background-color: #3f88c4; /* Adjust background color as needed */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+    width: 100%; /* Stretch across full width */
+  }
+  .superior-nav p {
+    flex: 1; /* Flexible width to share remaining space */
+    margin: 0; /* Remove default margins */
+    text-align: center; /* Center text within each paragraph (optional) */
+  }
+  
+  .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem; /* Margin for spacing after image */
+  }
+  
+  /* Search Bar Styles */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0; /* Margin for spacing above and below */
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd; /* Border for search bar */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .search-bar input {
+    flex: 1; /* Flexible width to fill most space */
+    border: none; /* Remove default input border */
+    padding: 5px; /* Adjust padding for spacing */
+  }
+  
+  .search-bar button {
+    padding: 5px 10px; /* Adjust padding for button */
+    border: none;
+    background-color: #007bff; /* Blue button color (Mercado Libre style) */
+    color: #fff; /* White text color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Indicate clickable button */
+  }
+  
+  /* Filter Card Styles */
+  .filter-card {
+    width: 300px; /* Set width for filter card */
+    padding: 1rem;
+    border: 1px solid #ddd; /* Border for card */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 1rem; /* Margin for spacing to the right */
+  }
+  
+  .filter-card h2 {
+    margin-bottom: 0.5rem; /* Margin for spacing below heading */
+  }
+  
+  .filter-card select {
+    padding: 5px;
+    border: 1px solid #ddd; /* Border for select element */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 0.5rem; /* Margin for spacing between options */
+    appearance: none; /* Remove default dropdown styling (optional) */
+  }
+  
+  .filter-card select:focus {
+    outline: 2px solid #007bff; /* Blue outline on focus (optional) */
+  }
+  
+  
+  /* Book Section Styles */
+  .book-section {
+    flex: 1; 
+    
+  }
+  
+  .book-section h2 {
+    margin-bottom: 0.5rem; /* Margin for spacing below heading */
+  }
+  
+ 
+  
+
+  .book-card {
+    display: flex; /* Arrange image and details side-by-side */
+    flex-direction: column; /* Stack elements vertically */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .book-card img {
+    width: 100px; /* Adjust image width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 0.5rem; /* Spacing between image and details */
+  }
+  
+  .book-details {
+    flex: 1; /* Flexible height to fill remaining space */
+  }
+  
+  .book-actions {
+    display: flex; /* Arrange buttons horizontally */
+    justify-content: space-between; /* Distribute buttons evenly */
+  }
+  
+  .book-actions button {
+    padding: 5px 10px; /* Adjust button padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style buttons differently (optional) */
+  .book-actions button:first-child {
+    background-color: #ddd; /* Gray background for "Escribir reseña" */
+  }
+  
+  .book-actions button:last-child {
+    background-color: #007bff; /* Blue background for "Ver más" */
+    color: #fff; /* White text */
+  }
+  
+  
