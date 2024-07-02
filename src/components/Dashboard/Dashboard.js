@@ -5,9 +5,8 @@ import FilterCard from './FilterCard';
 import BookSection from './BookSection';
 import './Dashboard.css'; // Assuming a stylesheet for the dashboard layout
 
-// Placeholder data for filters and books
+// Placeholder data for filters
 const filters = [/* ... */];
-const books = [/* ... */];
 
 const Dashboard = () => {
   // Placeholder functions for search and filter handling
@@ -24,7 +23,7 @@ const Dashboard = () => {
       <div className="dashboard-content">
         <SearchBar onSearch={handleSearch} />
         <FilterCard filters={filters} onFilterChange={handleFilterChange} />
-        <BookSection books={books} />
+        <BookSection />
       </div>
     </div>
   );

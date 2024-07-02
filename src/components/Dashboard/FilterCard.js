@@ -7,15 +7,17 @@ const FilterCard = ({ filters, onFilterChange }) => {
       <h2>Filtros</h2>
       
       <label htmlFor="category">Filtrar por categoría:</label>
-      <select id="category" onChange={(e) => onFilterChange(e.target.value)}>
-        {/* Dropdown for category selection */}
+      <select id="category">  {/* Dropdown for category selection */}
         <option value="">Seleccionar categoría</option>
-        {/* Map over the filters (categories) array */}
-        {filters.map((category, index) => (
-          <option key={index} value={category.name}>{category.name}</option>
-        ))}
+        <option value="fiction">Ficción</option>
+        <option value="non-fiction">No Ficción</option>
+        <option value="Poetry">Poesia</option>
+        <option value="Love">Amor</option>
+        <option value="Fantasy">Fantasia</option>
+        {/* Add more category options as needed */}
       </select>
     </div>
+
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
-import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar'; // Asumiendo que SearchBar está en el mismo directorio
+import BookCard from './BookCard'; // Asumiendo que tienes un componente BookCard
 
 const BookSection = () => {
   const [books, setBooks] = useState([]);
@@ -15,13 +15,13 @@ const BookSection = () => {
       try {
         const response = await fetch('http://localhost:5017/api/Books');
         const data = await response.json();
-        setBooks(data);
-        setSearchResults(data); // Inicialmente mostrar todos los libros
+        // Asumiendo que los libros están en la propiedad $values
+        setBooks(data.$values);
+        setSearchResults(data.$values); // Inicialmente mostrar todos los libros
       } catch (error) {
         console.error('Error fetching books:', error);
       }
     };
-
 
     // Función para obtener categorías
     const fetchCategories = async () => {
@@ -38,11 +38,13 @@ const BookSection = () => {
     fetchBooks();
     fetchCategories();
   }, []);
+
+  // Función para manejar la búsqueda de libros
   const handleSearch = (searchTerm) => {
     const filteredBooks = books.filter(book =>
-      book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      book.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      book.category.toLowerCase().includes(searchTerm.toLowerCase())
+      book.Title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      book.Author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      book.Category.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setSearchResults(filteredBooks);
   };
@@ -50,11 +52,7 @@ const BookSection = () => {
   // Función para filtrar libros por categoría seleccionada
   const handleFilterChange = (category) => {
     setSelectedCategory(category);
-    // Puedes implementar la lógica para filtrar libros según la categoría seleccionada aquí
   };
-
-  // Función para manejar la búsqueda de libros
-
 
   return (
     <div className="book-section">
@@ -66,20 +64,9 @@ const BookSection = () => {
       <div className="book-grid">
         {/* Mostrar libros filtrados por categoría o búsqueda */}
         {searchResults
-          .filter(book => selectedCategory === '' || book.category === selectedCategory)
+          .filter(book => selectedCategory === '' || book.Category === selectedCategory)
           .map((book) => (
-            <div key={book.id} className="book-card">
-              <img src={book.image} alt={book.title} />
-              <div className="book-details">
-                <h3>{book.title}</h3>
-                <p>by {book.author}</p>
-                <p>Category: {book.category}</p>
-              </div>
-              <div className="book-actions">
-                <button><Link to="/review">Escribir reseña</Link></button>
-                <button><Link to="/more">Ver más</Link></button>
-              </div>
-            </div>
+            <BookCard key={book.Id} book={book} />
           ))}
         {/* Mensaje si no hay libros encontrados */}
         {searchResults.length === 0 && <p>No se encontraron libros.</p>}
