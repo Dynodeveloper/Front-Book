@@ -4,12 +4,7 @@
     height: 100vh;
   }
   
-  .registration-image {
-    flex: 1;
-    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/2327ffa4-20e9-41b6-b77c-462d26f7bfea/d3ecbzg-045f95bb-8610-4dbb-84ab-e1d08fb037d7.jpg"); /* Use CSS background image */
-    background-size: cover;
-    background-position: center;
-  }
+
   
   .registration-page {
     display: flex;

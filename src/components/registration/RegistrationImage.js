@@ -1,13 +1,13 @@
 import React from 'react';
 import './Registration.css';
 
-const LoginImage = () => {
+const RegistrationImage = () => {
   return (
-    <div className="login-image">
+    <div className="registration-image">
       {/* Insert your image here */}
-      <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg" />
+      <img src="https://www.smile4kids.co.uk/assets/images/loginanimi.png" />
     </div>
   );
 };
 
-export default LoginImage;
+export default RegistrationImage;
