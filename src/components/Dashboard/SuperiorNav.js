@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import profileImage from '../profile/profileimage';
-import './Dashboard.css';  // Assuming a stylesheet for styling
+import ProfileImage from '../profile/profileimage'; // Importa el componente con PascalCase
+import './Dashboard.css';  // Suponiendo que este archivo contiene estilos para SuperiorNav
 
-const SuperiorNav = ({ profileImage }) => {
+const SuperiorNav = () => {
   return (
     <nav className="superior-nav">
-      <profileImage />
+      <ProfileImage /> {/* Renderiza el componente ProfileImage */}
       <p><Link to="/perfil">Perfil</Link></p>
-      <p><Link to="/about">about</Link></p>
-      <p><Link to="/">Log Out</Link></p>
-      {/* Navigation links or buttons here */}
+      <p><Link to="/about">Acerca de</Link></p>
+      <p><Link to="/">Cerrar sesión</Link></p>
+      {/* Otros enlaces de navegación o botones aquí */}
     </nav>
   );
 };

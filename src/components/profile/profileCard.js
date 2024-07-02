@@ -1,11 +1,13 @@
 import React from 'react';
+import ProfileImage from './profileimage';
 
 const ProfileCard = ({ user }) => {
   const { name, email, image, reviews } = user; // Destructure user data
 
   return (
+
     <div className="profile-card">
-      <img src={image} alt={name} className="profile-picture" />
+      <img src='https://i.pinimg.com/236x/29/9f/21/299f21837fc60d6157c14a1e38978179.jpg'  className="profile-picture" />
       <div className="profile-info">
         <h2>{name}</h2>
         <p>Email: {email}</p>

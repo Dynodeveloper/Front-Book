@@ -1,16 +1,37 @@
 import './login.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import React, { useState } from 'react'; // Import useState for form state
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  // Implement login logic here, potentially calling your ASP.NET backend
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Login clicked! Email:', email, 'Password:', password); // Placeholder for now
+
+    // Prepare login data object
+    const loginData = {
+      email: email,
+      password: password
+    };
+
+    try {
+      const response = await axios.post('http://localhost:5017/api/login', loginData);
+
+      if (response.status === 200) {
+        console.log('Login successful!', response.data);
+        localStorage.setItem('token', response.data.token);
+        window.location.href = '/dashboard'; // Redirect to dashboard on successful login
+      } else {
+        console.error('Login failed:', response.data);
+        setError('Usuario o contraseña incorrectos'); // Set error message for incorrect login
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      setError('Error al intentar iniciar sesión. Por favor, intenta de nuevo más tarde.'); // Set error message for other errors
+    }
   };
 
   return (
@@ -31,7 +52,8 @@ const LoginForm = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit"> <Link to="/dashboard">Iniciar sesión</Link></button>
+        {error && <p className="error-message">{error}</p>} {/* Display error message if there's an error */}
+        <button type="submit">Iniciar sesión</button>
       </form>
       <p>
         ¿Aún no tienes cuenta?{' '}

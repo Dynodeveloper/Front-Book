@@ -4,6 +4,8 @@ import ProfilePage from './components/profile/profilePage'
 import LoginPage from './components/Login/LoginPage';
 import RegistrationForm from './components/registration/RegistrationForm';
 import Dashboard from './components/Dashboard/Dashboard';
+import ReviewForm from './components/Reviews/ReviewPage';
+import MoreInfo from './components/More/MoreInfo';
 
 import './App.css';
 
@@ -15,6 +17,8 @@ function App() {
         <Route path="/perfil" element={<ProfilePage />} />
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/review" element={<ReviewForm />} />
+        <Route path="/more" element={<MoreInfo />} />
       </Routes>
     </Router>
   );

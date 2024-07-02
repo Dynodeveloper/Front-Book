@@ -1,9 +1,15 @@
 .profile-image {
-    flex: 1;
-    
-    background-size: cover;
-    background-position: center;
-  }
+  width: 120px; /* Ancho del contenedor */
+  height: 120px; /* Alto del contenedor */
+  border-radius: 50%; /* Para hacer el contenedor circular */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde */
+}
+
+.profile-image img {
+  width: 100%; /* Ajusta el tamaño de la imagen al contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
 
   .profile-card {
     display: flex;
