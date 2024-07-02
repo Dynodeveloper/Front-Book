@@ -5,7 +5,7 @@ import './Dashboard.css'; // Asumiendo que tienes un archivo de estilo para Book
 const BookCard = ({ book }) => {
   return (
     <div className="book-card">
-      <img src={book.image || 'default-image.jpg'} alt={book.Title} /> {/* Agrega una imagen por defecto si es necesario */}
+      <img src={book.ImageUrl} alt={book.Title} /> {/* Usa la URL de la imagen del libro o una imagen por defecto */}
       <div className="book-details">
         <h3>{book.Title}</h3>
         <p>by {book.Author}</p>
