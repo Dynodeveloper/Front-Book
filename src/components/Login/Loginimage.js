@@ -5,7 +5,7 @@ const LoginImage = () => {
   return (
     <div className="login-image">
       {/* Insert your image here */}
-      <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg" />
+      <img src="https://www.smile4kids.co.uk/assets/images/loginanimi.png" />
     </div>
   );
 };

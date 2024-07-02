@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Registration.css'; // Importa tu archivo de estilos CSS
 
 const RegistrationForm = () => {
   const [name, setName] = useState('');
@@ -39,28 +40,31 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="registration-form">
-      <h1>Registro de Usuario</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Nombre:</label>
-        <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+    <div className="registration-page">
+      <div className="registration-form">
+        <h1>Registro de Usuario</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">Nombre:</label>
+          <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
 
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
-        <label htmlFor="password">Contraseña:</label>
-        <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <label htmlFor="password">Contraseña:</label>
+          <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-        <label htmlFor="confirmPassword">Confirmar Contraseña:</label>
-        <input
-          type="password"
-          id="confirmPassword"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+          <label htmlFor="confirmPassword">Confirmar Contraseña:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
 
-        <button type="submit">Registrarse</button>
-      </form>
+          <button type="submit">Registrarse</button>
+        </form>
+      </div>
+      <div className="registration-image"></div>
     </div>
   );
 };
