@@ -6,6 +6,7 @@ import RegistrationForm from './components/registration/RegistrationForm';
 import Dashboard from './components/Dashboard/Dashboard';
 import ReviewForm from './components/Reviews/ReviewPage';
 import MoreInfo from './components/More/MoreInfo';
+import ResetPasswordForm from './components/ResetPassword/Reset';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/review" element={<ReviewForm />} />
         <Route path="/more" element={<MoreInfo />} />
+        <Route path="/Reset" element={<ResetPasswordForm />} />
       </Routes>
     </Router>
   );

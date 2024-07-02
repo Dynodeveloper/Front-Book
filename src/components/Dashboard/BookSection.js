@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import SearchBar from './SearchBar'; // Asumiendo que SearchBar está en el mismo directorio
 import BookCard from './BookCard'; // Asumiendo que tienes un componente BookCard
+import FilterCard from './FilterCard'; // Importa FilterCard
 
 const BookSection = () => {
   const [books, setBooks] = useState([]);
@@ -15,9 +16,8 @@ const BookSection = () => {
       try {
         const response = await fetch('http://localhost:5017/api/Books');
         const data = await response.json();
-        // Asumiendo que los libros están en la propiedad $values
-        setBooks(data.$values);
-        setSearchResults(data.$values); // Inicialmente mostrar todos los libros
+        setBooks(data.$values || []);
+        setSearchResults(data.$values || []); // Inicialmente mostrar todos los libros
       } catch (error) {
         console.error('Error fetching books:', error);
       }
@@ -28,7 +28,7 @@ const BookSection = () => {
       try {
         const response = await fetch('http://localhost:5017/api/categories');
         const data = await response.json();
-        setCategories(data);
+        setCategories(data || []); // Asignar directamente la respuesta de la API
       } catch (error) {
         console.error('Error fetching categories:', error);
       }
@@ -52,6 +52,12 @@ const BookSection = () => {
   // Función para filtrar libros por categoría seleccionada
   const handleFilterChange = (category) => {
     setSelectedCategory(category);
+    if (category === '') {
+      setSearchResults(books);
+    } else {
+      const filteredBooks = books.filter(book => book.Category === category);
+      setSearchResults(filteredBooks);
+    }
   };
 
   return (
@@ -61,13 +67,14 @@ const BookSection = () => {
       {/* Renderiza el componente SearchBar y pasa la función handleSearch */}
       <SearchBar onSearch={handleSearch} />
 
+      {/* Renderiza FilterCard y pasa las categorías obtenidas */}
+      <FilterCard filters={categories} onFilterChange={handleFilterChange} />
+
       <div className="book-grid">
         {/* Mostrar libros filtrados por categoría o búsqueda */}
-        {searchResults
-          .filter(book => selectedCategory === '' || book.Category === selectedCategory)
-          .map((book) => (
-            <BookCard key={book.Id} book={book} />
-          ))}
+        {searchResults.map((book) => (
+          <BookCard key={book.Id} book={book} />
+        ))}
         {/* Mensaje si no hay libros encontrados */}
         {searchResults.length === 0 && <p>No se encontraron libros.</p>}
       </div>

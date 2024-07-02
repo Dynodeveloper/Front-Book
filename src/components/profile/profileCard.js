@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ProfileImage from './profileimage';
 
 const ProfileCard = ({ user }) => {
@@ -22,7 +23,7 @@ const ProfileCard = ({ user }) => {
             <p>Aún no has escrito reseñas.</p>
           )}
         </div>
-        <button>Restablecer contraseña</button>
+        <button><Link to="/Reset">Restablecer contraseña</Link></button>
       </div>
     </div>
   );
