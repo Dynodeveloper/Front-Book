@@ -5,7 +5,7 @@
   
   /* Superior Navigation Bar Styles */
   .superior-nav {
-
+    align-items: center;
     display: flex;
     padding: 1rem;
     background-color: #3f88c4; /* Adjust background color as needed */
@@ -16,6 +16,17 @@
     flex: 1; /* Flexible width to share remaining space */
     margin: 0; /* Remove default margins */
     text-align: center; /* Center text within each paragraph (optional) */
+    
+  }
+
+  .superior-nav a{
+    text-decoration: none;
+    color: #d4d3d3;
+    font-weight: bold;
+  }
+
+  .superior-nav a:hover {
+    color: #0c0c0c;
   }
   
   .profile-image {
@@ -27,9 +38,10 @@
   
   /* Search Bar Styles */
   .search-bar {
+    width: 50rem;
     display: flex;
     align-items: center;
-    margin: 1rem 0; /* Margin for spacing above and below */
+    margin: 1rem 0 10px 20%; /* Margin for spacing above and below */
     padding: 0.5rem 1rem;
     border: 1px solid #ddd; /* Border for search bar */
     border-radius: 5px; /* Rounded corners */
@@ -52,23 +64,36 @@
   
   /* Filter Card Styles */
   .filter-card {
-    width: 300px; /* Set width for filter card */
-    padding: 1rem;
+    width: 305px; /* Set width for filter card */
+    padding: 10px;
     border: 1px solid #ddd; /* Border for card */
     border-radius: 5px; /* Rounded corners */
     margin-right: 1rem; /* Margin for spacing to the right */
+    margin: 0 15px 15px;
+    margin-left: 50px;
+    background-color: #ebebeb;
   }
   
   .filter-card h2 {
     margin-bottom: 0.5rem; /* Margin for spacing below heading */
+    font-size: 10px;
   }
   
   .filter-card select {
-    padding: 5px;
     border: 1px solid #ddd; /* Border for select element */
     border-radius: 5px; /* Rounded corners */
-    margin-bottom: 0.5rem; /* Margin for spacing between options */
     appearance: none; /* Remove default dropdown styling (optional) */
+    padding: 2px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    appearance: none;
+    font-weight: bold;
+  }
+
+  .filter-card label{
+    font-weight: 500;
+    margin-right: 10px;
   }
   
   .filter-card select:focus {
@@ -83,7 +108,10 @@
   }
   
   .book-section h2 {
-    margin-bottom: 0.5rem; /* Margin for spacing below heading */
+    max-width: 73px;
+    margin-left: 50px;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
  
@@ -96,6 +124,10 @@
     border-radius: 5px;
     padding: 1rem;
     margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    background-color: #ebebeb;
+    align-items: center;
   }
   
   .book-card img {
@@ -110,14 +142,19 @@
   
   .book-actions {
     display: flex; /* Arrange buttons horizontally */
+    gap: 40px;
     justify-content: space-between; /* Distribute buttons evenly */
   }
   
   .book-actions button {
-    padding: 5px 10px; /* Adjust button padding */
+    padding: 8px 15px; /* Adjust button padding */
     border: none;
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  .book-actions button:hover{
+    background-color: #0c0c0c;
   }
   
   /* Style buttons differently (optional) */
@@ -129,5 +166,22 @@
     background-color: #007bff; /* Blue background for "Ver más" */
     color: #fff; /* White text */
   }
+
+  .book-actions button:last-child:hover {
+    background-color: #538bd4; /* Blue background for "Ver más" */
+    
+  }
   
+  .book-actions button a {
+    text-decoration: none;
+    color: #0c0c0c;
+    font-weight: 600;
+  }
+  .book-grid{
+    display: flex;
+    gap: 1%;
+    flex-wrap: wrap;
+    width: 95%;
+    margin-left: 50px;
+  }
   

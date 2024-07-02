@@ -4,7 +4,7 @@ import './Dashboard.css';
 const FilterCard = ({ filters, onFilterChange }) => {
   return (
     <div className="filter-card">
-      <h2>Filtros</h2>
+
       
       <label htmlFor="category">Filtrar por categoría:</label>
       <select 

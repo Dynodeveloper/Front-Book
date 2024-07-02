@@ -21,7 +21,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <SuperiorNav profileImage="path/to/profile.jpg" />  {/* Replace with your image path */}
       <div className="dashboard-content">
-        <FilterCard filters={filters} onFilterChange={handleFilterChange} />
+        
         <BookSection />
       </div>
     </div>
